@@ -2,7 +2,8 @@ var matches = {
 	"exchange" : "#txtSch",
 	"facebook" : "._586i",
 	"www.google" : "#gbqfq",
-	"dropbox" : "#browse-search-input"
+	"dropbox" : "#browse-search-input",
+	"github" : "#js-command-bar-field"
 }
 
 $(document).keydown(function(e, f) {
