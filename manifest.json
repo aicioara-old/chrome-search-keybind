@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+
+	"name": "Search Aimer",
+	"description": "A chrome extension which adds a keybind for aiming the search bar inside the displayed page.",
+	"version": "1.0",
+
+	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+	],
+
+	"content_scripts": [
+	{
+		"matches": ["https://*/*", "http://*/*"],
+		"js": ["jquery.js", "contentScript.js"],
+	}
+	],
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"web_accessible_resources": [
+		"icons/*.png"
+	],
+
+	"icons": { "16": "icon.png", "48": "icon.png", "128": "icon.png" }
+
+
+}

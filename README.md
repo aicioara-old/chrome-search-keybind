@@ -16,6 +16,12 @@ Category
 
 Productivity
 
+Covered websites
+----------------
+
+* Facebook
+* Lightweight Microsoft Exchange
+
 Installation
 ------------
 
