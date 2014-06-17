@@ -15,6 +15,7 @@ Covered websites
 * Facebook
 * Google
 * Dropbox
+* GitHub
 * Lightweight Microsoft Exchange
 
 Installation
