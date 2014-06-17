@@ -5,7 +5,6 @@ chrome-search-keybind
 
 
 
-
 Description
 -----------
 A chrome extension which adds a keybind for aiming the search bar inside the displayed page.
@@ -20,6 +19,8 @@ Covered websites
 ----------------
 
 * Facebook
+* Google
+* Dropbox
 * Lightweight Microsoft Exchange
 
 Installation

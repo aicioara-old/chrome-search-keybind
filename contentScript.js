@@ -1,6 +1,8 @@
 var matches = {
 	"exchange" : "#txtSch",
-	"facebook" : "asd"
+	"facebook" : "._586i",
+	"www.google" : "#gbqfq",
+	"dropbox" : "#browse-search-input"
 }
 
 $(document).keydown(function(e, f) {
