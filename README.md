@@ -1,19 +1,13 @@
 chrome-search-keybind
 =====================
 
-**` Under development `**
-
+**` Completed `**
 
 
 Description
 -----------
-A chrome extension which adds a keybind for aiming the search bar inside the displayed page.
+A chrome extension that helps auto-focus on page search bar to avoid extra clicks.
 
-
-Category
---------
-
-Productivity
 
 Covered websites
 ----------------
@@ -32,4 +26,6 @@ Google Chrome -> Settings -> Extensions -> Tick Developer Mode -> Load Unpacked 
 
 Usage
 -----
-Press alt+s and the
+Press alt + s and the search bar will be on focus.
+
+From hackers for hackers.
