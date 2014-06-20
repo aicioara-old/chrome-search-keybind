@@ -1,3 +1,3 @@
-console.log("not necessary");
-
-// location.reload();
+chrome.omnibox.onInputEntered.addListener(function(text) {
+	window.location = 'options.html';
+});

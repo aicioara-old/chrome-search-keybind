@@ -20,6 +20,8 @@
 		"scripts": ["background.js"]
 	},
 
+	"omnibox": { "keyword" : "sa" },
+
 	"web_accessible_resources": [
 		"icons/*.png"
 	],
