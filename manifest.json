@@ -6,7 +6,9 @@
 	"version": "1.0",
 
 	"permissions": [
-		"tabs", "http://*/*", "https://*/*"
+		"tabs",
+		"contextMenus",
+		"http://*/*", "https://*/*"
 	],
 
 	"content_scripts": [
@@ -19,8 +21,6 @@
 	"background": {
 		"scripts": ["background.js"]
 	},
-
-	"omnibox": { "keyword" : "sa" },
 
 	"web_accessible_resources": [
 		"icons/*.png"
