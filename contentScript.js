@@ -12,6 +12,8 @@ $(document).keydown(function(e, f) {
 	}
 });
 
+
+
 function processURL() {
 
 	var url = window.location.href;
@@ -28,3 +30,19 @@ function processURL() {
 function focusOnSearchBar($selector) {
 	$($selector).focus();
 }
+
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	var activeElement = document.activeElement;
+	var selector = "input";
+	if (activeElement.id) {
+		selector = "#" + activeElement.id;
+	} else if (activeElement.class) {
+		selector = "." + activeElement.class;
+	}
+
+	sendResponse({
+		page: document.location.href,
+		elementSelector: selector
+	});
+});
