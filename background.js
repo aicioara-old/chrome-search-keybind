@@ -2,12 +2,10 @@ function setContextMenu(show) {
 	chrome.contextMenus.removeAll();
 	if (show) {
 		chrome.contextMenus.create({
-			"title" : "Add shortcut",
-			"contexts" : ["editable"],
+			title : "Add shortcut",
+			contexts : ["editable"],
 			onclick : function(info,tab) {
-				queryContentScript(function(a, e) {
-					console.log(a, e);
-				});
+				queryContentScript(makeAssociation);
 			}
 		});
 	}
@@ -26,4 +24,11 @@ function queryContentScript(callback) {
 
 }
 
+function makeAssociation(page, selector) {
+	var regExp = new RegExp('[^?]*');
+	var processedPage = page.match(regExp)[0];
 
+	console.log(processedPage);
+	console.log(selector);
+
+}
