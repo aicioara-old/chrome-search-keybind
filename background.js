@@ -28,6 +28,24 @@ function makeAssociation(page, selector) {
 	var regExp = new RegExp('[^?]*');
 	var processedPage = page.match(regExp)[0];
 
+	var urlToOpen=chrome.extension.getURL("options.html");
+
+
+	chrome.tabs.query({'windowId':chrome.windows.WINDOW_ID_CURRENT}, function(tabList) {
+		for(var i = 0; i < tabList.length; i++) {
+			var cTab = tabList[i];
+			if(cTab.url.indexOf(urlToOpen) == 0) {
+				chrome.tabs.update(cTab.id, {
+					'selected': true
+				});
+				return;
+			}
+		}
+		chrome.tabs.create({
+			'url': urlToOpen
+		});
+	});
+
 	console.log(processedPage);
 	console.log(selector);
 
