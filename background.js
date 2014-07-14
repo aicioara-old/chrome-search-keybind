@@ -28,7 +28,11 @@ function makeAssociation(page, selector) {
 	var regExp = new RegExp('[^?]*');
 	var processedPage = page.match(regExp)[0];
 
-	var urlToOpen=chrome.extension.getURL("options.html");
+
+	// var url = "options.html?" + "page='" + processedPage + "'&selector='" + selector + "'";
+	var url = "options.html";
+
+	var urlToOpen=chrome.extension.getURL(url);
 
 
 	chrome.tabs.query({'windowId':chrome.windows.WINDOW_ID_CURRENT}, function(tabList) {
