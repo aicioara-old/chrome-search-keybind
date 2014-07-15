@@ -32,7 +32,7 @@ function makeAssociation(page, selector) {
 	// var url = "options.html?" + "page='" + processedPage + "'&selector='" + selector + "'";
 	var url = "options.html";
 
-	var urlToOpen=chrome.extension.getURL(url);
+	var urlToOpen = chrome.extension.getURL(url);
 
 
 	chrome.tabs.query({'windowId':chrome.windows.WINDOW_ID_CURRENT}, function(tabList) {
@@ -52,5 +52,50 @@ function makeAssociation(page, selector) {
 
 	console.log(processedPage);
 	console.log(selector);
+}
 
+
+// var x = chrome.storage.sync.get('value', function(e) {
+// 	console.log (e);
+// });
+
+// chrome.storage.sync.set({'value': 2}, function() {
+// 	console.log('Settings saved');
+// });
+
+addToStorage('facebook', '#asd', true);
+// addToStorage('google', '#def', true);
+
+setTimeout (function() {
+	getStorage(function(e) {
+		console.log(e);
+	})
+}, 3000)
+
+// chrome.storage.sync.set({'chrome-search-keybind' : null}, function(e) {})
+
+function addToStorage(processedPage, selector, ticked) {
+	chrome.storage.sync.get('chrome-search-keybind', function(old) {
+		if (old["chrome-search-keybind"]) {
+			var newItem = old["chrome-search-keybind"];
+		} else {
+			var newItem = {};
+		}
+		var obj = {
+			"selector" : selector,
+			"ticked" : ticked
+		}
+		newItem[processedPage] = obj;
+
+		chrome.storage.sync.set({'chrome-search-keybind' : newItem}, function(e) {
+
+		})
+
+	})
+}
+
+function getStorage(callback) {
+	chrome.storage.sync.get('chrome-search-keybind', function(storage) {
+		callback(storage);
+	})
 }
