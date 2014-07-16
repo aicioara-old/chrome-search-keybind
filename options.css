@@ -1,21 +1,25 @@
-#table {
+.tablePlace {
 	width: 100%;
 }
 
-#table tr {
+.tablePlace tr {
 	width: 100%;
 }
 
-#table td {
+.tablePlace td {
 	width: 100%;
 	padding: 5px 10px;
 	border-bottom: 1px solid black;
 }
 
-#table tr:first-child td {
+.tablePlace tr:first-child td {
 	border-bottom: 0px;
 }
 
-#table td:first-child {
+.tablePlace td:first-child {
 	width: 600px;
+}
+
+.buttonPlace {
+	margin: 50px 0;
 }
