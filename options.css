@@ -1,0 +1,21 @@
+#table {
+	width: 100%;
+}
+
+#table tr {
+	width: 100%;
+}
+
+#table td {
+	width: 100%;
+	padding: 5px 10px;
+	border-bottom: 1px solid black;
+}
+
+#table tr:first-child td {
+	border-bottom: 0px;
+}
+
+#table td:first-child {
+	width: 600px;
+}
