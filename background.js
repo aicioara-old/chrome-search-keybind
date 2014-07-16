@@ -63,7 +63,7 @@ function makeAssociation(page, selector) {
 // 	console.log('Settings saved');
 // });
 
-addToStorage('facebook', '#asd', true);
+addToStorage('microsoft', '#asd', true);
 // addToStorage('google', '#def', true);
 
 setTimeout (function() {
@@ -73,29 +73,3 @@ setTimeout (function() {
 }, 3000)
 
 // chrome.storage.sync.set({'chrome-search-keybind' : null}, function(e) {})
-
-function addToStorage(processedPage, selector, ticked) {
-	chrome.storage.sync.get('chrome-search-keybind', function(old) {
-		if (old["chrome-search-keybind"]) {
-			var newItem = old["chrome-search-keybind"];
-		} else {
-			var newItem = {};
-		}
-		var obj = {
-			"selector" : selector,
-			"ticked" : ticked
-		}
-		newItem[processedPage] = obj;
-
-		chrome.storage.sync.set({'chrome-search-keybind' : newItem}, function(e) {
-
-		})
-
-	})
-}
-
-function getStorage(callback) {
-	chrome.storage.sync.get('chrome-search-keybind', function(storage) {
-		callback(storage);
-	})
-}

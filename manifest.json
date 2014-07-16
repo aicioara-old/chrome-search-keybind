@@ -21,7 +21,10 @@
 	],
 
 	"background": {
-		"scripts": ["background.js"]
+		"scripts": [
+			"helpers.js",
+			"background.js"
+		]
 	},
 
 	"web_accessible_resources": [
