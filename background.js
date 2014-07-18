@@ -11,7 +11,6 @@ function setContextMenu(show) {
 	}
 }
 
-
 setContextMenu(true);
 
 function queryContentScript(callback) {
@@ -21,19 +20,15 @@ function queryContentScript(callback) {
 		});
 
 	});
-
 }
 
 function makeAssociation(page, selector) {
 	var regExp = new RegExp('[^?]*');
 	var processedPage = page.match(regExp)[0];
 
-
-	// var url = "options.html?" + "page='" + processedPage + "'&selector='" + selector + "'";
 	var url = "options.html";
 
 	var urlToOpen = chrome.extension.getURL(url);
-
 
 	chrome.tabs.query({'windowId':chrome.windows.WINDOW_ID_CURRENT}, function(tabList) {
 		for(var i = 0; i < tabList.length; i++) {
@@ -50,18 +45,8 @@ function makeAssociation(page, selector) {
 		});
 	});
 
-	console.log(processedPage);
-	console.log(selector);
 }
 
-
-// var x = chrome.storage.sync.get('value', function(e) {
-// 	console.log (e);
-// });
-
-// chrome.storage.sync.set({'value': 2}, function() {
-// 	console.log('Settings saved');
-// });
 
 addToStorage('microsoft', '#asd', true);
 // addToStorage('google', '#def', true);
@@ -72,4 +57,3 @@ setTimeout (function() {
 	})
 }, 3000)
 
-// chrome.storage.sync.set({'chrome-search-keybind' : null}, function(e) {})
