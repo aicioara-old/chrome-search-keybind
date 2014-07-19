@@ -57,17 +57,25 @@ function displayOption(processedPage, selector, ticked) {
 		value: processedPage
 	});
 
-	table.append(displayRow(tickedOption, selectorOption, processedPageOption));
+	var deleteButton = $("<button>", {
+		type: "button"
+
+	}).html("Delete")
+	.click(function() {
+		console.log("asd")
+	})
+
+	var newRow = displayRow(tickedOption, processedPageOption, selectorOption, deleteButton);
+	table.append(newRow);
 }
 
-function displayRow(opt1, opt2, opt3) {
+function displayRow() {
 	var row = $("<tr>");
 
-	var col1 = $("<td>").append(opt1);
-	var col2 = $("<td>").append(opt2);
-	var col3 = $("<td>").append(opt3);
-
-	row.append(col1).append(col2).append(col3);
+	for (var i = 0; i < arguments.length; i++) {
+		var col = $("<td>").append(arguments[i]);
+		row.append(col);
+	}
 
 	return row;
 }

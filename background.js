@@ -30,8 +30,13 @@ function makeAssociation(page, selector) {
 
 	var urlToOpen = chrome.extension.getURL(url);
 
+	console.log(processedPage);
+	console.log(selector);
+
+	addToStorage(processedPage, selector, true);
+
 	chrome.tabs.query({'windowId':chrome.windows.WINDOW_ID_CURRENT}, function(tabList) {
-		for(var i = 0; i < tabList.length; i++) {
+		for (var i = 0; i < tabList.length; i++) {
 			var cTab = tabList[i];
 			if(cTab.url.indexOf(urlToOpen) == 0) {
 				chrome.tabs.update(cTab.id, {
@@ -44,12 +49,8 @@ function makeAssociation(page, selector) {
 			'url': urlToOpen
 		});
 	});
-
 }
 
-
-addToStorage('microsoft', '#asd', true);
-// addToStorage('google', '#def', true);
 
 setTimeout (function() {
 	getStorage(function(e) {
