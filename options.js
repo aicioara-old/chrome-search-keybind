@@ -59,13 +59,18 @@ function displayOption(processedPage, selector, ticked) {
 
 	var deleteButton = $("<button>", {
 		type: "button"
-
-	}).html("Delete")
-	.click(function() {
-		console.log("asd")
+	});
+	deleteButton.html("Delete")
+	deleteButton.click(function() {
+		deleteFromStorage(processedPage);
 	})
 
 	var newRow = displayRow(tickedOption, processedPageOption, selectorOption, deleteButton);
+
+	deleteButton.click(function() {
+		newRow.detach();
+	})
+
 	table.append(newRow);
 }
 
@@ -82,7 +87,7 @@ function displayRow() {
 
 function displaySubmitButton() {
 	var button = $("<button>");
-	button.html("Submit");
+	button.html("Save");
 
 	button.click(function() {
 		console.log('a')
