@@ -1,15 +1,15 @@
-var table = $("#tablePlace");
+var table = $("#tablePlace").find("tbody");
 var buttonPlace = $("#buttonPlace")
 
 
-displayTableHeader();
-displayFirstColumn();
 displayAllColumns();
+displayFirstColumn();
+displayTableHeader();
 displaySubmitButton();
 
 
 function displayTableHeader() {
-	table.append(displayRow("Active", "Page matching", "jQuery selector"));
+	$("#theadFirst").replaceWith(displayRow("Active", "Page matching", "jQuery selector"));
 }
 
 function displayFirstColumn() {
@@ -26,7 +26,7 @@ function displayFirstColumn() {
 		type: "text",
 	});
 
-	table.append(displayRow(tickedOption, selectorOption, processedPageOption));
+	$("#theadSecond").replaceWith(displayRow(tickedOption, selectorOption, processedPageOption));
 }
 
 
@@ -71,7 +71,7 @@ function displayOption(processedPage, selector, ticked) {
 		newRow.detach();
 	})
 
-	table.append(newRow);
+	table.prepend(newRow);
 }
 
 function displayRow() {
